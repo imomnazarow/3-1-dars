@@ -101,6 +101,18 @@ console.log(
   "// ==================== 4. deleteUser(id) ===========================================",
 );
 
-function deleteUser(id) {}
+function deleteUser(id) {
+  let userExists = users.some((u) => u.id === id);
+
+  if (!userExists) {
+    return "Xato: O'chiriladigan user topilmadi";
+  }
+
+  let deletedUser = users.find((u) => u.id === id);
+
+  users = users.filter((u) => u.id !== id);
+
+  return { success: true, deletedUser, users };
+}
 
 console.log(deleteUser(2));
