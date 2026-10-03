@@ -101,22 +101,6 @@ console.log(
   "// ==================== 4. deleteUser(id) ===========================================",
 );
 
-function deleteUser(id) {
-  let userExists = users.some((u) => u.id === id);
-
-  // Agar user topilmasa xato qaytaramiz
-  if (!userExists) {
-    return "Xato: O'chiriladigan user topilmadi";
-  }
-
-  let deletedUser = users.find((u) => u.id === id);
-
-  // Berilgan id dan boshqalarini qoldirib, massivni yangilaymiz
-  users = users.filter((u) => u.id !== id);
-
-  return { success: true, deletedUser, users };
-}
-
-// --- SINOV KODLARI (Console Test Case) ---
+function deleteUser(id) {}
 
 console.log(deleteUser(2));
